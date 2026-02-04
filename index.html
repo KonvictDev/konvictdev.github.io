@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KonvictDev | Professional Digital Tools</title>
-    
+    <title>KonvictDev | Professional Digital Tools & Resume Builder</title>
+
+    <meta name="description" content="Build professional, ATS-friendly resumes instantly with KonvictDev. Free, secure, and no signup required.">
+    <meta property="og:title" content="ResuMe | Professional Resume Builder by KonvictDev">
+    <meta property="og:description" content="Create high-quality resumes in minutes. Your data stays on your device.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/KonvictDev/ResuMe/refs/heads/main/ResuMe.jpg">
+    <meta property="og:url" content="https://konvictdev.github.io/ResuMe/">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%234f46e5'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-weight='900' font-size='28' text-anchor='middle' fill='white'%3ERM%3C/text%3E%3C/svg%3E">
 
     <meta name="google-site-verification" content="4AJt-xrra3oDqIeXppwxnhimSuQuecqTuH97FO4Y7pk" />
@@ -14,94 +21,123 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        dialog::backdrop { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); }
+        dialog::backdrop { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); }
         dialog[open] { animation: slideUp 0.3s ease-out; }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .app-preview-shadow { box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.25); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-700">
 
-    <nav class="bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center sticky top-0 z-10">
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
         <div class="flex items-center gap-2 font-bold text-xl text-indigo-600">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#4f46e5"/><text x="32" y="42" font-family="sans-serif" font-weight="900" font-size="28" text-anchor="middle" fill="white">RM</text></svg>
             KonvictDev
         </div>
-        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-            <button onclick="showDialog('about')" class="hover:text-indigo-600">About</button>
-            <button onclick="showDialog('privacy')" class="hover:text-indigo-600">Privacy</button>
-            <button onclick="showDialog('contact')" class="hover:text-indigo-600">Contact</button>
+        <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+            <button onclick="showDialog('about')" class="hover:text-indigo-600 transition-colors">About</button>
+            <button onclick="showDialog('privacy')" class="hover:text-indigo-600 transition-colors">Privacy</button>
+            <button onclick="showDialog('contact')" class="hover:text-indigo-600 transition-colors">Contact</button>
         </div>
     </nav>
 
-    <header class="py-20 px-4 text-center">
+    <header class="pt-16 pb-20 px-4 text-center">
         <div class="max-w-4xl mx-auto">
-            <span class="bg-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-sm font-bold tracking-wide uppercase">New Update 2.0</span>
-            <h1 class="text-5xl font-extrabold text-slate-900 mt-6 mb-6 tracking-tight">Build Professional Resumes <span class="text-indigo-600 italic">instantly.</span></h1>
-            <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">The world's most secure, client-side resume builder. No signups, no data storage, just high-quality results.</p>
-            <a href="/ResuMe/" class="inline-flex items-center gap-3 bg-slate-900 hover:bg-indigo-600 text-white font-bold py-4 px-10 rounded-xl transition-all shadow-xl hover:-translate-y-1">
-                Launch ResuMe App <i class="fa-solid fa-rocket"></i>
-            </a>
+            <span class="inline-block bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-6">v2.0 Live Now</span>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">Create a Job-Winning Resume <span class="text-indigo-600 italic">in minutes.</span></h1>
+            <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">The premier privacy-focused resume builder. No accounts, no fees, just professional ATS-friendly results processed entirely in your browser.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-20">
+                <a href="/ResuMe/" class="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-10 rounded-xl transition-all shadow-xl hover:-translate-y-1">
+                    Launch ResuMe App <i class="fa-solid fa-rocket"></i>
+                </a>
+            </div>
+
+            <div class="relative max-w-5xl mx-auto group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+                <div class="relative rounded-2xl overflow-hidden border border-slate-200 bg-white app-preview-shadow">
+                    <img src="https://raw.githubusercontent.com/KonvictDev/ResuMe/refs/heads/main/ResuMe.jpg" 
+                         alt="ResuMe App Interface Preview" 
+                         class="w-full h-auto block">
+                </div>
+            </div>
         </div>
     </header>
 
-    <dialog id="about" class="rounded-2xl shadow-2xl p-0 max-w-2xl w-full">
-        <div class="p-8">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="text-2xl font-bold">About KonvictDev</h2>
-                <button onclick="this.closest('dialog').close()" class="text-slate-400 hover:text-slate-600 text-xl"><i class="fa-solid fa-xmark"></i></button>
+    <dialog id="about" class="rounded-3xl shadow-2xl p-0 max-w-2xl w-full border border-slate-100">
+        <div class="p-8 md:p-12">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-900">About the Lab</h2>
+                <button onclick="this.closest('dialog').close()" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-red-50 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="space-y-4 text-slate-600 leading-relaxed">
-                <p>KonvictDev is a dedicated laboratory for building high-performance, privacy-focused web utilities. Our mission is to provide professional-grade tools for developers and job-seekers without the privacy concerns of traditional SaaS platforms.</p>
-                <p>Our flagship tool, <strong>ResuMe</strong>, was built to solve the "subscription trap" of resume builders. It uses client-side rendering to ensure that your sensitive professional data never touches a database.</p>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog id="privacy" class="rounded-2xl shadow-2xl p-0 max-w-2xl w-full">
-        <div class="p-8">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="text-2xl font-bold font-bold text-indigo-600">Privacy Policy</h2>
-                <button onclick="this.closest('dialog').close()" class="text-slate-400 hover:text-slate-600 text-xl"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="space-y-4 text-sm text-slate-600 h-[60vh] overflow-y-auto pr-4">
-                <p><strong>Last Updated: Feb 2026</strong></p>
-                <p>At KonvictDev, we prioritize your data safety. Our tools operate on a <strong>Local-Only</strong> processing model.</p>
-                <h3 class="font-bold text-slate-900">1. Information We Collect</h3>
-                <p>We do not collect personal identifiers. Your resume content is stored in your browser's <code>localStorage</code> and nowhere else.</p>
-                <h3 class="font-bold text-slate-900">2. Google AdSense & Third Parties</h3>
-                <p>We use Google AdSense to monetize our free tools. Google uses cookies (DART cookies) to serve ads based on your activity. You can opt-out at: <a href="https://policies.google.com/technologies/ads" class="text-indigo-600">policies.google.com/technologies/ads</a></p>
-                <h3 class="font-bold text-slate-900">3. Log Files</h3>
-                <p>Like all websites, we use standard log files for site traffic analysis, which includes IP addresses and browser types, but none are linked to personal identity.</p>
+            <div class="space-y-5 text-slate-600 text-lg leading-relaxed">
+                <p><strong>KonvictDev</strong> is an independent software lab focused on creating high-utility digital tools that prioritize user privacy and speed.</p>
+                <p>Most resume builders today lure users in with "free" templates, only to charge a subscription at the final download step. <strong>ResuMe</strong> was created to break that cycle by offering a truly free, high-quality alternative that stores 0% of your data on our servers.</p>
             </div>
         </div>
     </dialog>
 
-    <dialog id="contact" class="rounded-2xl shadow-2xl p-0 max-w-md w-full">
-        <div class="p-8 text-center">
-            <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fa-solid fa-envelope text-2xl"></i>
+    <dialog id="privacy" class="rounded-3xl shadow-2xl p-0 max-w-2xl w-full border border-slate-100">
+        <div class="p-8 md:p-12">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-indigo-600">Privacy & Ethics</h2>
+                <button onclick="this.closest('dialog').close()" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-red-50 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <h2 class="text-2xl font-bold mb-2">Contact Us</h2>
-            <p class="text-slate-500 mb-6">Have a feature request or found a bug? We'd love to hear from you.</p>
-            <a href="mailto:appsbyanandakumar@gmail.com" class="block w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+            <div class="space-y-6 text-sm text-slate-600 max-h-[60vh] overflow-y-auto pr-4">
+                <p class="font-bold">Last Updated: February 2026</p>
+                <div>
+                    <h3 class="font-bold text-slate-900 uppercase tracking-wider text-xs mb-2">1. Local Processing</h3>
+                    <p>Unlike other platforms, your resume data never leaves your computer. We use browser-based processing to generate PDFs locally.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 uppercase tracking-wider text-xs mb-2">2. Advertising & Cookies</h3>
+                    <p>We use Google AdSense to keep our tools free. Google uses DART cookies to serve relevant ads. You can manage your preferences at the <a href="https://policies.google.com/technologies/ads" class="text-indigo-600 font-bold hover:underline">Google Ad Settings page</a>.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 uppercase tracking-wider text-xs mb-2">3. Third Party Links</h3>
+                    <p>Our app may contain links to other sites. We are not responsible for the privacy practices of those external entities.</p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="contact" class="rounded-3xl shadow-2xl p-0 max-w-md w-full border border-slate-100">
+        <div class="p-10 text-center">
+            <div class="w-20 h-20 bg-indigo-50 text-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6 rotate-3">
+                <i class="fa-solid fa-paper-plane text-3xl"></i>
+            </div>
+            <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+            <p class="text-slate-500 mb-8 font-medium">Have a suggestion or need support with your resume? Drop us a line.</p>
+            <a href="mailto:appsbyanandakumar@gmail.com" class="block w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-indigo-600 transition-all shadow-lg">
                 appsbyanandakumar@gmail.com
             </a>
-            <button onclick="this.closest('dialog').close()" class="mt-4 text-sm text-slate-400 hover:text-slate-600 underline">Close</button>
+            <button onclick="this.closest('dialog').close()" class="mt-6 text-slate-400 hover:text-slate-600 font-bold text-sm tracking-widest uppercase">Dismiss</button>
         </div>
     </dialog>
 
-    <footer class="mt-20 py-12 border-t border-slate-200 text-center">
-        <div class="flex justify-center gap-6 mb-6">
-            <button onclick="showDialog('about')" class="text-slate-500 hover:text-indigo-600 text-sm font-medium">About Us</button>
-            <button onclick="showDialog('privacy')" class="text-slate-500 hover:text-indigo-600 text-sm font-medium">Privacy</button>
-            <button onclick="showDialog('contact')" class="text-slate-500 hover:text-indigo-600 text-sm font-medium">Contact</button>
+    <footer class="mt-10 py-16 border-t border-slate-200 bg-white text-center">
+        <div class="flex flex-wrap justify-center gap-8 mb-10 font-bold text-sm text-slate-500 uppercase tracking-widest">
+            <button onclick="showDialog('about')" class="hover:text-indigo-600 transition-colors">About Us</button>
+            <button onclick="showDialog('privacy')" class="hover:text-indigo-600 transition-colors">Privacy Policy</button>
+            <button onclick="showDialog('contact')" class="hover:text-indigo-600 transition-colors">Support</button>
         </div>
-        <p class="text-slate-400 text-xs tracking-widest uppercase">&copy; 2026 KonvictDev Lab</p>
+        <div class="text-slate-400 text-xs">
+            <p class="mb-2">&copy; 2026 KonvictDev Lab. All rights reserved.</p>
+            <p>Made with <i class="fa-solid fa-heart text-red-400 mx-1"></i> for the community.</p>
+        </div>
     </footer>
 
     <script>
         function showDialog(id) {
-            document.getElementById(id).showModal();
+            const modal = document.getElementById(id);
+            modal.showModal();
+            // Close on backdrop click
+            modal.addEventListener('click', (e) => {
+                const rect = modal.getBoundingClientRect();
+                if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+                    modal.close();
+                }
+            });
         }
     </script>
 </body>
